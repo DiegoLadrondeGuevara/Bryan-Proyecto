@@ -45,7 +45,7 @@ Para este proyecto, utilizaremos la nube de **Amazon Web Services (AWS)**.
 ### **Inversión y Tiempo:**
 
 * **Tiempo:** 4 semanas (Dedicación 8h diarias).
-* **Inversión Especial (Familiar): S/ 3,000.00** *(Valor real mercado: S/ 8,500.00)*
+* **Inversión Especial (Familiar): S/ 5,000.00** *(Valor real mercado: S/ 8,500.00)*
 
 ---
 
@@ -65,12 +65,11 @@ Para este proyecto, utilizaremos la nube de **Amazon Web Services (AWS)**.
 * **Todo lo de la Propuesta A.**
 * **Pasarela de Pagos Integrada:** (Culqi o Mercado Pago).
 * **Integración de Hardware:** Conexión directa entre la nube y tu máquina física.
-* **Marketing de Renovación:** Correos automáticos dirigidos al cliente para asegurar la re-venta.
-
+  
 ### **Inversión y Tiempo:**
 
 * **Tiempo:** 8 a 10 semanas.
-* **Inversión Especial (Familiar): S/ 7,000.00** *(Valor real mercado: S/ 18,000.00)*
+* **Inversión Especial (Familiar): S/ 8,000.00** *(Valor real mercado: S/ 18,000.00)*
 
 ---
 
