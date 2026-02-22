@@ -51,25 +51,28 @@ Para este proyecto, utilizaremos la nube de **Amazon Web Services (AWS)**.
 
 ## 4. PROPUESTA B: "SAAS PRO + AUTOMATIZACIÓN TOTAL"
 
-*Solución avanzada para automatizar cobros, fabricación y renovaciones.*
+*Solución avanzada para automatizar cobros, fabricación e identidad de marca propia.*
 
 ### **¿Cómo funcionará el sistema?**
 
-1. **Autogestión y Pago:** El cliente paga online mediante tarjeta, Yape o Plin.
-2. **Impresión IoT:** Al confirmarse el pago, la web envía la orden y tu máquina imprime la pulsera/sticker automáticamente.
-3. **Renovación Automática:** El sistema envía correos **tanto a ti como al cliente** con un botón de "Renovar ahora" que lo lleva directo a pagar su siguiente mes/año.
-4. **Monitoreo:** Reportes económicos detallados de tus ganancias.
+1. **Dominio Propio (Marca):** Tu página tendrá su nombre oficial (Ej: `www.tumarca.pe`), lo cual permite que tu marca aparezca en la URL de cada QR.
+2. **Autogestión y Pago:** El cliente paga online mediante tarjeta, Yape o Plin de forma automática.
+3. **Impresión IoT:** Al confirmarse el pago, la web envía la orden y tu máquina imprime la pulsera/sticker automáticamente.
+4. **Renovación Automática:** El sistema envía correos **tanto a ti como al cliente** con un botón de "Renovar ahora" para el pago del siguiente periodo.
+5. **Monitoreo:** Reportes económicos detallados de tus ganancias.
 
 ### **¿Qué obtendrás al final?**
 
 * **Todo lo de la Propuesta A.**
+* **Dominio Especial Registrado:** Configuración de la marca en la URL (.pe / .com).
 * **Pasarela de Pagos Integrada:** (Culqi o Mercado Pago).
 * **Integración de Hardware:** Conexión directa entre la nube y tu máquina física.
-  
+
 ### **Inversión y Tiempo:**
 
 * **Tiempo:** 8 a 10 semanas.
 * **Inversión Especial (Familiar): S/ 8,000.00** *(Valor real mercado: S/ 18,000.00)*
+* *Nota: El costo del nombre del dominio (aprox. S/ 110 anual) es cubierto por el cliente.*
 
 ---
 
@@ -78,6 +81,7 @@ Para este proyecto, utilizaremos la nube de **Amazon Web Services (AWS)**.
 | Función | Opción 1 (MVP) | Opción 2 (SaaS Pro) |
 | --- | --- | --- |
 | **Arquitectura** | AWS Serverless (Pago por uso) | AWS Serverless (Pago por uso) |
+| **Dominio Personalizado** | URL Genérica | **URL con tu Marca (propio)** |
 | **Pagos** | Manual (Efectivo/Yape externo) | Automático (Pasarela integrada) |
 | **Impresión** | Manual (Descarga de archivo) | Automática (Conexión IoT) |
 | **Alertas Vencimiento** | **Email solo al administrador** | **Email a admin y al cliente** |
@@ -104,4 +108,4 @@ Para iniciar con la **Opción 1**:
 
 1. **Aceptación:** Confirmar la propuesta por este medio.
 2. **Configuración:** Sesión de 30 min para crear tu cuenta AWS con tu tarjeta.
-3. **Inicio:** Abono del **50% de adelanto (S/ 1,500.00)** para comenzar el desarrollo mañana mismo.
+3. **Inicio:** Abono del **50% de adelanto (S/ 2,500.00)** para comenzar el desarrollo mañana mismo.
