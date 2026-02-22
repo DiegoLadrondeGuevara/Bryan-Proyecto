@@ -1,6 +1,6 @@
 ### **OPCIÓN 1: MVP Operativo + Panel de Control (Recomendada)**
 
-*Esta opción es para lanzar el negocio en tiempo récord (2-3 semanas) y manejar las ventas de forma presencial o manual.*
+*Esta opción es para lanzar el negocio en tiempo récord (1 mes) y manejar las ventas de forma presencial o manual.*
 
 * **Para el Cliente Final (Padre/Dueño):**
 * Registro e inicio de sesión seguro.
@@ -17,7 +17,7 @@
 
 * **Infraestructura AWS:** Todo en **Lambda + DynamoDB** (Costo S/ 0 mientras no haya tráfico masivo).
 * **Inversión:** **[agregar]** (Pago único).
-* **Tiempo:** 2.5 semanas (Dedicación 8h diarias).
+* **Tiempo:** 1 mes (Dedicación 8h diarias).
 
 ---
 
