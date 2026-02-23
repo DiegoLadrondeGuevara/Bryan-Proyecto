@@ -15,10 +15,11 @@ El objetivo es desarrollar una plataforma tecnológica robusta que permita la cr
 ---
 
 ## 2. Infraestructura: AWS Serverless y Costos Operativos
+hacer la calculadora de servisio usados
 
 Para este proyecto, utilizaremos la nube de **Amazon Web Services (AWS)**.
 
-* **Cero Gastos Fijos:** A diferencia de un hosting tradicional (S/ 50-100 mensuales), AWS solo te cobrará por cada vez que alguien use la web. Si no hay tráfico, el costo es **S/ 0.00**.
+* **Cero Gastos Fijos:** A diferencia de un hosting tradicional (S/ 50-100 mensuales), AWS solo te cobrará por cada vez que alguien use la web. Si no hay tráfico, el costo es **S/ 0.00**. Cambiar
 * **Tu Propiedad:** Tú crearás la cuenta con tu propia tarjeta. Esto garantiza que tú eres el único dueño de la base de datos. Yo solo me encargo de la configuración técnica.
 * **Ahorro en Notificaciones:** Usaremos **AWS SES** para los correos electrónicos, que permite enviar miles de mensajes de forma gratuita o por fracciones de céntimo.
 
@@ -37,11 +38,10 @@ Para este proyecto, utilizaremos la nube de **Amazon Web Services (AWS)**.
 5. **Alertas de Vencimiento:** El sistema revisará diariamente las fechas y **te enviará un correo automático** avisándote qué clientes están por vencer para que puedas contactarlos y renovarles manualmente.
 
 ### **¿Qué obtendrás al final?**
-
-* **Web App de Usuario:** Interfaz para que tus clientes vean su ficha.
-* **Panel Administrativo:** Tu centro de control para buscar usuarios por DNI y generar QRs.
+- **Web app usuario para observar mos dstos de la persona cuando escaneas el qr**
+* **Panel Administrativo: especificar que hace, poner para roles diferentes** Tu centro de control para buscar usuarios por DNI y generar QRs.
 * **Sistema de Alertas:** Notificaciones a tu correo sobre suscripciones por expirar.
-
+se necesita intenet en las tablets para funcioanr con la web (parametrico en el panel tsmbien)
 ### **Inversión y Tiempo:**
 
 * **Tiempo:** 4 semanas (Dedicación 8h diarias).
@@ -56,17 +56,12 @@ Para este proyecto, utilizaremos la nube de **Amazon Web Services (AWS)**.
 ### **¿Cómo funcionará el sistema?**
 
 1. **Dominio Propio (Marca):** Tu página tendrá su nombre oficial (Ej: `www.tumarca.pe`), lo cual permite que tu marca aparezca en la URL de cada QR.
-2. **Autogestión y Pago:** El cliente paga online mediante tarjeta, Yape o Plin de forma automática.
-3. **Impresión IoT:** Al confirmarse el pago, la web envía la orden y tu máquina imprime la pulsera/sticker automáticamente.
-4. **Renovación Automática:** El sistema envía correos **tanto a ti como al cliente** con un botón de "Renovar ahora" para el pago del siguiente periodo.
-5. **Monitoreo:** Reportes económicos detallados de tus ganancias.
 
+Reportes de usuarios (estsfisticas)
 ### **¿Qué obtendrás al final?**
 
 * **Todo lo de la Propuesta A.**
 * **Dominio Especial Registrado:** Configuración de la marca en la URL (.pe / .com).
-* **Pasarela de Pagos Integrada:** (Culqi o Mercado Pago).
-* **Integración de Hardware:** Conexión directa entre la nube y tu máquina física.
 
 ### **Inversión y Tiempo:**
 
@@ -82,10 +77,10 @@ Para este proyecto, utilizaremos la nube de **Amazon Web Services (AWS)**.
 | --- | --- | --- |
 | **Arquitectura** | AWS Serverless (Pago por uso) | AWS Serverless (Pago por uso) |
 | **Dominio Personalizado** | URL Genérica | **URL con tu Marca (propio)** |
-| **Pagos** | Manual (Efectivo/Yape externo) | Automático (Pasarela integrada) |
+| **Pagos** | Manual (Efectivo/Yape externo) | A|
 | **Impresión** | Manual (Descarga de archivo) | Automática (Conexión IoT) |
 | **Alertas Vencimiento** | **Email solo al administrador** | **Email a admin y al cliente** |
-| **Mantenimiento** | S/ 0 (Capa gratuita AWS) | S/ 0 (Capa gratuita AWS) |
+| **Mantenimiento** | (Segun uso AWS) | (Según metricas de uso AWS)|
 
 ---
 
