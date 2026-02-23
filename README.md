@@ -33,7 +33,7 @@ Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilid
 1. **Captación:** Registro de datos del usuario (niño, mascota, etc.) desde una tablet o PC.
 2. **Generación:** Creación de un código QR único vinculado a la información.
 3. **Fabricación:** Descarga del QR en formato de imagen para impresión manual.
-4. **Visualización:** Al escanear el QR, se mostrará una **Cartilla Informativa** con: nombre o alias, características relevantes y botón de contacto directo a WhatsApp (No se mostrará información sensible (dirección, geolocalización, DNI, etc.).
+4. **Visualización:** Al escanear el QR, se mostrará una **Cartilla Informativa** con: nombre o alias, características relevantes y botón de contacto directo a WhatsApp (No se mostrará información sensible (dirección, geolocalización, DNI, etc.).La información visible en la cartilla será definida y validada por el cliente.
 5. **Dominio Propio (Marca):** Configuración de URL personalizada (Ej: `www.tumarca.pe`).
 6. **Alertas de Vencimiento:** Notificación automática diaria al administrador y al usuario 3 hitos (7 días antes, 3 días antes, día de vencimiento), además de un correo de reafirmación del inico de suscripción.
 
@@ -73,13 +73,13 @@ Es la página optimizada para móviles que aparece al escanear el QR:
 
 ### **Implementación Técnica de Logs y Suscripción**
 
-1. **Registro de Escaneos (Logs):** Se implementará un microservicio en **AWS Lambda + DynamoDB** que guardará el `ID_QR`, `Fecha/Hora` y `Tipo de dispositivo`. Esto permite al Admin ver en qué momentos hay más actividad (No se almacena ubicación GPS ni IP del escaneo).
+1. **Registro de Escaneos (Logs):** Se implementará un microservicio en **AWS Lambda + DynamoDB** que guardará el `ID_QR`, `Fecha/Hora` y `Tipo de dispositivo`. Esto permite al Admin ver en qué momentos hay más actividad (No se almacena ubicación GPS ni IP del escaneo). Los registros son de carácter estadístico y no constituyen seguimiento individual del usuario final
 2. **Lógica de Suscripción:** El campo `fecha_inicio` en la base de datos permanecerá nulo (`NULL`) hasta que se presione el botón de activación. Esto garantiza una facturación justa para el cliente y evita que el soporte técnico tenga que corregir fechas de vencimiento manualmente por retrasos en la entrega física.
 
 
 ### **Inversión y Tiempo:**
 
-* **Tiempo:** 6 a 8 semanas (Dedicación 8h diarias).
+* **Tiempo:** 6 semanas (Dedicación 8h diarias).
 * **Inversión:** **S/ 6,500.00**
 
 ---
@@ -205,17 +205,7 @@ Para garantizar la transparencia y el cumplimiento de los tiempos, el proceso de
 * **Exclusiones de Garantía:** No se incluyen daños causados por manipulación indebida de las credenciales de AWS por parte del cliente, falta de pago en los servicios de la nube (Amazon) o vencimiento del dominio.
 * **Acta de Conformidad Final:** Al término de la Semana 6 y tras la entrega de las credenciales maestras, se firmará un acta de conformidad que dará por concluido el proyecto y habilitará el pago del **50% restante**.
 
-## 8. Operación y Soporte Posterior (Mantenimiento)
-
-Finalizado el periodo de garantía de 15 días, el cliente podrá asegurar la continuidad del sistema mediante las siguientes modalidades:
-
-* **Plan de Mantenimiento Evolutivo (Opcional):**
-* **Servicios:** Monitoreo de salud del sistema en AWS, mantenimiento preventivo de bases de datos, ajustes menores de interfaz y soporte técnico ante incidencias.
-* **Inversión Mensual:** **S/ 350.00** (Costo referencial sujeto a volumen de tickets [Incluye hasta 4 horas mensuales / 8 tickets]).
-
-* **Soporte On-Demand:** De no contratar el plan mensual, cualquier requerimiento posterior a los 15 días de garantía se facturará como **"Hora Técnica"** con una tarifa de **S/ 80.00 por hora**.
-
-## 9. Exclusiones Explícitas del Alcance
+## 8. Exclusiones Explícitas del Alcance
 
 Para evitar el *scope creep* y cumplir con el cronograma, se declara que el presente MVP **NO incluye**:
 
@@ -227,7 +217,7 @@ Para evitar el *scope creep* y cumplir con el cronograma, se declara que el pres
 * Analítica avanzada de Business Intelligence o reportes contables complejos.
 * * **Cierre de Caja:** El sistema NO realiza cuadre de caja ni gestión de efectivo. El cliente debe llevar su control contable manualmente de forma externa.
 
-## 10. Uso y Protección de Datos Personales
+## 9. Uso y Protección de Datos Personales
 
 * **Responsabilidad de Datos:** El cliente (**Bryan Mayanga**) es el único responsable legal del tratamiento, consentimiento y uso de los datos personales registrados por los usuarios finales en la plataforma.
 * **Privacidad por Diseño:** El sistema ha sido diseñado para no recolectar direcciones exactas ni geolocalización automática sin validación previa, minimizando los riesgos legales asociados a la privacidad.
@@ -235,10 +225,10 @@ Para evitar el *scope creep* y cumplir con el cronograma, se declara que el pres
 * **Kill-Switch (No eliminación):** Por comodidad comercial, el sistema NO eliminará automáticamente los datos al vencer la suscripción para permitir reactivaciones. Solo el Super-Admin tendrá la facultad de eliminación definitiva mediante una función especial.
 ---
 
-## 11. Próximos Pasos
+## 10. Próximos Pasos
 
-Para iniciar con la **Opción 1**:
+Para iniciar con la propuesta:
 
 1. **Aceptación:** Creación y firma de los contratos.
-2. **Configuración:** Sesión de 30 min - 1 hora para apertura de cuenta AWS.
+2. **Configuración:** Sesión de 30 min - 1 hora para apertura de cuenta AWS con tarjeta de crédito del cliente.
 3. **Inicio:** Abono del **50% de adelanto (S/ 3,250.00)** para comenzar el desarrollo.
