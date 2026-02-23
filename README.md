@@ -54,7 +54,7 @@ El acceso al sistema está blindado por **AWS Cognito**, asegurando que cada usu
 
 * **Formulario de Registro y Pre-activación:** Registro de datos del usuario. Al guardar, el perfil se crea automáticamente en estado **"Pendiente de Entrega"**.
 * *Nota: En este estado, la suscripción NO corre y el tiempo de servicio no se consume.*
-* **Activación Manual de Suscripción:** Una vez que el cliente recibe su pulsera física con el QR, el Reclutador (o el Admin) presiona el botón **"Activar Servicio"**.
+* **Activación Manual de Suscripción:** La activación se realiza en una fecha especifica.
 * **Acción:** El sistema registra la fecha actual como "Fecha de Inicio" y calcula automáticamente la fecha de vencimiento.
 * **Buscador y Verificación:** Filtro por Nombre o ID para confirmar que la información en la cartilla es correcta antes de la entrega final.
 * **Gestor de Salida (QR):** Generación y descarga de la imagen del código para su fabricación física.
@@ -73,8 +73,8 @@ Es la página optimizada para móviles que aparece al escanear el QR:
 
 ### **Implementación Técnica de Logs y Suscripción**
 
-1. **Registro de Escaneos (Logs):** Se implementará un microservicio en **AWS Lambda + DynamoDB** que guardará el `ID_QR`, `Fecha/Hora` y `Tipo de dispositivo`. Esto permite al Admin ver en qué momentos hay más actividad (No se almacena ubicación GPS ni IP del escaneo). Los registros son de carácter estadístico y no constituyen seguimiento individual del usuario final
-2. **Lógica de Suscripción:** El campo `fecha_inicio` en la base de datos permanecerá nulo (`NULL`) hasta que se presione el botón de activación. Esto garantiza una facturación justa para el cliente y evita que el soporte técnico tenga que corregir fechas de vencimiento manualmente por retrasos en la entrega física.
+1. **Registro de Escaneos (Logs):** Se implementará un microservicio en que guardará el `ID_QR`, `Fecha/Hora` y `Tipo de dispositivo`. Esto permite al Admin ver en qué momentos hay más actividad (No se almacena ubicación GPS ni IP del escaneo). Los registros son de carácter estadístico y no constituyen seguimiento individual del usuario final
+2. **Lógica de Suscripción:** El campo `fecha_inicio` se establece al momento del alta del cliente (por defecto tomará la fecha actual o puede ser modificada). 
 
 
 ### **Inversión y Tiempo:**
@@ -91,14 +91,14 @@ Para garantizar el correcto funcionamiento del panel en el punto de venta:
 * **Conectividad (Obligatoria):** Internet estable (Wi-Fi o 4G/5G). El sistema depende de la nube.
 * **Pantalla Recomendada:** 10.1 pulgadas o superior.
 * **Memoria RAM:** 4 GB o superior.
-* **Sistema Operativo:** Android 11+ o iPadOS 15+.
+* **Sistema Operativo:** Android 11+.
 * **Navegador:** Google Chrome actualizado.
 
 ---
 
 ## 5. Cronograma de Trabajo
 
-**Semana 1: Cimientos y Configuración Cloud**
+**Semana 1: Configuración Cloud**
 
 * Apertura y configuración de la cuenta **AWS** del cliente.
 * Configuración de seguridad y autenticación con **AWS Cognito**.
