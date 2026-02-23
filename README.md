@@ -138,4 +138,4 @@ Para iniciar con la **Opción 1**:
 
 1. **Aceptación:** Creación y firma de los contratos.
 2. **Configuración:** Sesión de 30 min - 1 hora para apertura de cuenta AWS.
-3. **Inicio:** Abono del **50% de adelanto (S/ 2,750.00) o (S/ 3,250.00)** para comenzar el desarrollo.
+3. **Inicio:** Abono del **50% de adelanto (S/ 3,250.00)** para comenzar el desarrollo.
