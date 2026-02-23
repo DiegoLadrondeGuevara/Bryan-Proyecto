@@ -59,7 +59,7 @@ El acceso al sistema está blindado por **AWS Cognito**, asegurando que cada usu
 * **Buscador y Verificación:** Filtro por Nombre o ID para confirmar que la información en la cartilla es correcta antes de la entrega final.
 * **Gestor de Salida (QR):** Generación y descarga de la imagen del código para su fabricación física.
 
-#### **C. Interfaz de Cartilla (Vista del Usuario Final)**
+### **Interfaz de Cartilla (Vista del Usuario Final)**
 
 Es la página optimizada para móviles que aparece al escanear el QR:
 
