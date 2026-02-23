@@ -24,7 +24,7 @@ Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilid
 
 ---
 
-## 3. PROPUESTA: "MVP OPERATIVO + PANEL ADMIN"
+## 3. PROPUESTA A: "MVP OPERATIVO + PANEL ADMIN"
 
 *Ideal para lanzar el negocio en el corto plazo con control total y ventas presenciales.*
 
