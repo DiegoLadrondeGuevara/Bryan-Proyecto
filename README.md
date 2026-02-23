@@ -34,7 +34,8 @@ Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilid
 2. **Generación:** Creación de un código QR único vinculado a la información.
 3. **Fabricación:** Descarga del QR en formato de imagen para impresión manual.
 4. **Visualización:** Al escanear el QR, se mostrará una **Cartilla Informativa** con: nombre, edad, sexo, características físicas, correo del representante y botón de contacto directo a WhatsApp.
-5. **Alertas de Vencimiento:** Notificación automática diaria al administrador sobre suscripciones próximas a expirar.
+5. **Dominio Propio (Marca):** Configuración de URL personalizada (Ej: `www.tumarca.pe`).
+6. **Alertas de Vencimiento:** Notificación automática diaria al administrador sobre suscripciones próximas a expirar.
 
 ### **Panel Administrativo (Backoffice):**
 
@@ -50,31 +51,8 @@ Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilid
 
 ### **Inversión y Tiempo:**
 
-* **Tiempo:** 4 a 6 semanas (Dedicación 8h diarias).
-* **Inversión Preferencial:** **S/ 5,500.00**
-
----
-
-## 4. PROPUESTA B: "SAAS PRO"
-
-*Solución avanzada para escala de marca, pagos automáticos e inteligencia de negocio.*
-
-### **Alcance Adicional a la Propuesta A:**
-
-1. **Dominio Propio (Marca):** Configuración de URL personalizada (Ej: `www.tumarca.pe`).
-2. **Módulo de Reportes (Estadísticas):**
-* Gráficos de nuevos registros y renovaciones mensuales.
-* Métricas de interacción (cantidad de escaneos por zona o perfil).
-* Reportes exportables para gestión contable.
-
-
-4. **Automatización de Notificaciones:** Correos automáticos de recordatorio dirigidos **tanto al administrador como al cliente final**.
-
-### **Inversión y Tiempo:**
-
-* **Tiempo:** 8 a 12 semanas.
+* **Tiempo:** 6 a 8 semanas (Dedicación 8h diarias).
 * **Inversión Preferencial:** **S/ 6,500.00**
-* *Nota: Costos de dominio (.pe S/ 110/año aprox.)*
 
 ---
 
@@ -129,11 +107,28 @@ El sistema utiliza una arquitectura **Serverless**, lo que permite que los costo
 | **Monitoreo** | Logs y seguridad activa | S/ 2.00 | S/ 10.00 | S/ 25.00 |
 | **TOTAL ESTIMADO** |  | **S/ 5.00 – S/ 10.00** | **S/ 35.00 – S/ 50.00** | **S/ 130.00 – S/ 180.00** |
 
-### **2. Notas Importantes sobre el Pago de Nube**
+#### **Notas Importantes sobre el Pago de Nube**
 
 * **Eficiencia Operativa:** El costo de infraestructura solo aumenta si el negocio crece y genera más registros. Si un mes no hay actividad, el costo se reduce al mínimo técnico (cercano a S/ 0.00).
 * **Transparencia:** El pago se realiza directamente de la tarjeta del cliente a Amazon Web Services. No existen intermediarios en este cobro.
 * **Seguridad Financiera:** Como parte de la configuración inicial, activaremos **"Alertas de Presupuesto"**. Esto significa que Amazon te enviará un correo automático si el consumo mensual llegara a superar un monto límite establecido por ti (ejemplo: S/ 50.00), dándote control total sobre el gasto.
+
+---
+### 2. Precios por Extensión (Anual) (Dominio)
+
+| Extensión | Tipo | Precio Promedio (Soles) | Nota |
+| --- | --- | --- | --- |
+| **.pe** | Dominio Nacional | **S/ 110 – S/ 130** | Es el más prestigioso para el mercado local. |
+| **.com.pe** | Comercial Perú | **S/ 80 – S/ 110** | Muy usado por empresas peruanas. |
+| **.com** | Internacional | **S/ 50 – S/ 80** | El estándar global; suele ser el más económico. |
+| **.net / .org** | Alternativos | **S/ 60 – S/ 90** | Para tecnología u organizaciones. |
+| **.org.pe** | Org. Peruana | **S/ 20 – S/ 40** | Precio especial para ONGs. |
+
+### 2. Consideraciones Importantes
+
+* **IGV:** Ten en cuenta que la mayoría de proveedores locales no incluyen el **18% de IGV** en sus precios de lista.
+* **Ofertas de "Primer Año":** Muchos registradores ofrecen el primer año a un precio muy bajo (ej. **S/ 1.00** o **S/ 15.00**), pero la renovación al segundo año sube al precio regular. **Fíjate siempre en el costo de renovación.**
+* **Punto.pe:** Es el administrador oficial de los dominios `.pe` en el país. Si compras directamente ahí, el precio es estándar (**S/ 110.00**), mientras que los revendedores pueden cobrar una comisión por gestión o darte descuentos si contratas hosting con ellos.
 
 ---
 
