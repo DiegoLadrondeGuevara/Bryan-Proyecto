@@ -70,10 +70,47 @@ Para garantizar el correcto funcionamiento del panel en el punto de venta:
 
 ## 6. Cronograma de Trabajo
 
-* **Semana 1:** Configuración de AWS, Seguridad y Base de Datos.
-* **Semana 2:** Formulario de registro y Visualización de Cartilla.
-* **Semana 3:** Panel Administrativo y Generador de QR.
-* **Semana 4:** Sistema de Alertas, pruebas finales y despliegue.
+**Semana 1: Cimientos y Configuración Cloud**
+
+* Apertura y configuración de la cuenta **AWS** del cliente.
+* Configuración de seguridad y autenticación con **AWS Cognito**.
+* Diseño y despliegue de la arquitectura de base de datos en **DynamoDB**.
+* Configuración del entorno de desarrollo y repositorio.
+
+**Semana 2: Visualización y Perfiles (Cartilla)**
+
+* Desarrollo de la interfaz de la **Cartilla Informativa** (perfil público).
+* Implementación de la lógica de visualización (datos de emergencia y contacto).
+* Integración del botón de contacto directo a **WhatsApp**.
+* Pruebas de visualización en dispositivos móviles y tablets.
+
+**Semana 3: Panel Administrativo y Registro**
+
+* Desarrollo del panel de gestión (Backoffice) para administradores.
+* Creación del formulario de captación y registro de usuarios (niños, mascotas, etc.).
+* Implementación del **Buscador Inteligente** por DNI, nombre o código.
+* Configuración de roles: Super-Admin y Operador.
+
+**Semana 4: Generación de QR y Dominio**
+
+* Desarrollo del motor de generación de **códigos QR únicos**.
+* Implementación de la función de descarga de QR en formato de imagen para impresión.
+* Configuración y vinculación del **Dominio Propio** (Ej: `www.tumarca.pe`).
+* Pruebas de escaneo y redirección desde el dominio personalizado.
+
+**Semana 5: Suscripciones y Seguridad**
+
+* Implementación del sistema de control de estados (Semáforo: Activo / Por vencer / Vencido).
+* Desarrollo del botón de desactivación instantánea (**Kill-Switch**).
+* Configuración de **AWS SES** para el envío de alertas automáticas por correo al administrador.
+* Activación del Log de auditoría (historial de cambios y registros).
+
+**Semana 6: Pruebas Finales, Ajustes y Despliegue**
+
+* Pruebas de estrés y seguridad en toda la plataforma.
+* Ajustes de interfaz de usuario (UX/UI) basados en pruebas reales en tablet.
+* Configuración de **Alertas de Presupuesto** en AWS para control de costos.
+* Lanzamiento oficial (Go-Live) y entrega de credenciales.
 
 ---
 
