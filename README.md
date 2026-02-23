@@ -157,7 +157,23 @@ El sistema utiliza una arquitectura **Serverless**, lo que permite que los costo
 
 ---
 
-## 7. Próximos Pasos
+## 7. Protocolo de Aceptación de Entregables y Garantía
+
+Para garantizar la transparencia y el cumplimiento de los tiempos, el proceso de entrega se regirá bajo las siguientes condiciones:
+
+* **Validación por Hitos:** Al finalizar cada semana (según el cronograma), el administrador revisará los avances. El silencio administrativo por parte del cliente tras **48 horas** de presentado un avance se considerará como aceptado para proceder con la siguiente etapa.
+* **Cierre de Alcance (MVP):** La inversión de **S/ 6,500.00** cubre exclusivamente las funcionalidades descritas en la "Propuesta A". Cualquier funcionalidad adicional, cambio de diseño estructural o integración externa no mencionada se cotizará como un **"Add-on"** independiente.
+* **Periodo de Marcha Blanca (Garantía):** Una vez realizado el despliegue final (Semana 6), se otorgará un periodo de **15 días calendario** de soporte técnico técnico gratuito. Este soporte cubre exclusivamente:
+* Corrección de errores (bugs) en el código desarrollado.
+* Ajustes menores de textos o colores en la interfaz.
+
+
+* **Exclusiones de Garantía:** No se incluyen dentro de la garantía daños causados por manipulación indebida de las credenciales de AWS por parte del cliente, falta de pago en los servicios de la nube (Amazon) o vencimiento del dominio.
+* **Acta de Conformidad Final:** Al término de la Semana 6 y tras la entrega de las credenciales maestras, se firmará un acta de conformidad que dará por concluido el proyecto y habilitará el pago del **50% restante**.
+
+---
+
+## 8. Próximos Pasos
 
 Para iniciar con la **Opción 1**:
 
