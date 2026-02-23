@@ -88,7 +88,7 @@ Para garantizar el correcto funcionamiento del panel en el punto de venta:
 
 * Desarrollo del panel de gestión (Backoffice) para administradores.
 * Creación del formulario de captación y registro de usuarios (niños, mascotas, etc.).
-* Implementación del **Buscador Inteligente** por DNI, nombre o código.
+* Implementación del **Buscador Inteligente** por ID. o nombre.
 * Configuración de roles: Super-Admin y Operador.
 
 **Semana 4: Generación de QR y Dominio**
