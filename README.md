@@ -24,7 +24,7 @@ Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilid
 
 ---
 
-## 3. PROPUESTA A: "MVP OPERATIVO + PANEL ADMIN"
+## 3. PROPUESTA: "MVP OPERATIVO + PANEL ADMIN"
 
 *Ideal para lanzar el negocio en el corto plazo con control total y ventas presenciales.*
 
@@ -52,7 +52,7 @@ Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilid
 ### **Inversión y Tiempo:**
 
 * **Tiempo:** 6 a 8 semanas (Dedicación 8h diarias).
-* **Inversión Preferencial:** **S/ 6,500.00**
+* **Inversión:** **S/ 6,500.00**
 
 ---
 
@@ -68,19 +68,7 @@ Para garantizar el correcto funcionamiento del panel en el punto de venta:
 
 ---
 
-## 6. Comparativa Técnica
-
-| Función | Propuesta A (MVP) | Propuesta B (SaaS Pro) |
-| --- | --- | --- |
-| **Arquitectura** | AWS Serverless | AWS Serverless |
-| **Dominio** | URL Genérica | **Propio (Tu Marca)** |
-| **Pagos** | Registro Manual | **Automatizados (Online)** |
-| **Alertas Vencimiento** | Solo al Administrador | **Admin y Cliente Final** |
-| **Estadísticas** | Básicas | **Avanzadas y Exportables** |
-
----
-
-## 7. Cronograma de Trabajo
+## 6. Cronograma de Trabajo
 
 * **Semana 1:** Configuración de AWS, Seguridad y Base de Datos.
 * **Semana 2:** Formulario de registro y Visualización de Cartilla.
@@ -132,7 +120,7 @@ El sistema utiliza una arquitectura **Serverless**, lo que permite que los costo
 
 ---
 
-## 9. Próximos Pasos
+## 7. Próximos Pasos
 
 Para iniciar con la **Opción 1**:
 
