@@ -16,9 +16,9 @@ El objetivo es desarrollar una plataforma tecnológica robusta que permita la cr
 
 ## 2. Infraestructura Cloud y Costos
 
-Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilidad y estándares de seguridad empresarial
+Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilidad y estándares de seguridad empresarial.
 
-* **Costos Variables:** El sistema se basa en el consumo real. Se estima un costo mensual inicial bajo (aprox. **S/ 30.00 – S/ 80.00**), sujeto al tráfico y volumen de datos. Si no hay uso, el costo tiende a cero.
+* **Costos Variables:** El sistema se basa en el consumo real. Se estima un costo mensual inicial bajo (aprox. **S/ 30.00 – S/ 80.00**), sujeto al tráfico y volumen de datos. Si la actividad es baja, los costos se reducen significativamente.
 * **Propiedad y Control:** El cliente realizará la apertura de su cuenta AWS y el registro de su método de pago. El cliente es el titular único de los datos y responsable del acceso administrativo y custodia de sus credenciales.
 * **Notificaciones:** Se integrará **AWS SES** para el envío de alertas automáticas por correo electrónico con costos mínimos por volumen.
 
@@ -33,7 +33,7 @@ Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilid
 1. **Captación:** Registro de datos del usuario (niño, mascota, etc.) desde una tablet o PC.
 2. **Generación:** Creación de un código QR único vinculado a la información.
 3. **Fabricación:** Descarga del QR en formato de imagen para impresión manual.
-4. **Visualización:** Al escanear el QR, se mostrará una **Cartilla Informativa** con: nombre, edad, sexo, características físicas, correo del representante y botón de contacto directo a WhatsApp.
+4. **Visualización:** Al escanear el QR, se mostrará una **Cartilla Informativa** con: nombre o alias, características relevantes y botón de contacto directo a WhatsApp.
 5. **Dominio Propio (Marca):** Configuración de URL personalizada (Ej: `www.tumarca.pe`).
 6. **Alertas de Vencimiento:** Notificación automática diaria al administrador y al usuario que compra el servicio sobre suscripciones próximas a expirar.
 
@@ -161,19 +161,46 @@ El sistema utiliza una arquitectura **Serverless**, lo que permite que los costo
 
 Para garantizar la transparencia y el cumplimiento de los tiempos, el proceso de entrega se regirá bajo las siguientes condiciones:
 
-* **Validación por Hitos:** Al finalizar cada semana (según el cronograma), el administrador revisará los avances. El silencio administrativo por parte del cliente tras **48 horas** de presentado un avance se considerará como aceptado para proceder con la siguiente etapa.
-* **Cierre de Alcance (MVP):** La inversión de **S/ 6,500.00** cubre exclusivamente las funcionalidades descritas en la "Propuesta A". Cualquier funcionalidad adicional, cambio de diseño estructural o integración externa no mencionada se cotizará como un **"Add-on"** independiente.
-* **Periodo de Marcha Blanca (Garantía):** Una vez realizado el despliegue final (Semana 6), se otorgará un periodo de **15 días calendario** de soporte técnico técnico gratuito. Este soporte cubre exclusivamente:
+* **Validación por Hitos:** Al finalizar cada semana (según el cronograma), el cliente revisará los avances. El silencio administrativo tras **48 horas** de presentado un avance se considerará como aceptado para proceder con la siguiente etapa.
+* **Cierre de Alcance (MVP):** La inversión de **S/ 6,500.00** cubre exclusivamente las funcionalidades descritas en esta propuesta. Cualquier funcionalidad adicional, cambio de diseño estructural o integración externa no mencionada se cotizará como un **"Add-on"** independiente.
+* **Periodo de Marcha Blanca (Garantía):** Una vez realizado el despliegue final (Semana 6), se otorgará un periodo de **15 días calendario** de soporte técnico gratuito. Este soporte cubre exclusivamente:
 * Corrección de errores (bugs) en el código desarrollado.
 * Ajustes menores de textos o colores en la interfaz.
 
 
-* **Exclusiones de Garantía:** No se incluyen dentro de la garantía daños causados por manipulación indebida de las credenciales de AWS por parte del cliente, falta de pago en los servicios de la nube (Amazon) o vencimiento del dominio.
+* **Exclusiones de Garantía:** No se incluyen daños causados por manipulación indebida de las credenciales de AWS por parte del cliente, falta de pago en los servicios de la nube (Amazon) o vencimiento del dominio.
 * **Acta de Conformidad Final:** Al término de la Semana 6 y tras la entrega de las credenciales maestras, se firmará un acta de conformidad que dará por concluido el proyecto y habilitará el pago del **50% restante**.
+
+## 8. Operación y Soporte Posterior (Mantenimiento)
+
+Finalizado el periodo de garantía de 15 días, el cliente podrá asegurar la continuidad del sistema mediante las siguientes modalidades:
+
+* **Plan de Mantenimiento Evolutivo (Opcional):**
+* **Servicios:** Monitoreo de salud del sistema en AWS, mantenimiento preventivo de bases de datos, ajustes menores de interfaz y soporte técnico ante incidencias.
+* **Inversión Mensual:** **S/ 350.00** (Costo referencial sujeto a volumen de tickets).
+
+* **Soporte On-Demand:** De no contratar el plan mensual, cualquier requerimiento posterior a los 15 días de garantía se facturará como **"Hora Técnica"** con una tarifa de **S/ 80.00 por hora**.
+
+## 9. Exclusiones Explícitas del Alcance
+
+Para evitar el *scope creep* y cumplir con el cronograma, se declara que el presente MVP **NO incluye**:
+
+* Integración con pasarelas de pago automáticas (el registro de activación es **100% manual** en el panel).
+* Desarrollo de Aplicación Móvil nativa (el sistema es una Web App Responsiva).
+* Integración directa con hardware de impresión (la descarga del QR para impresión es manual).
+* Geolocalización automática en tiempo real del escaneo.
+* Módulo Multi-empresa o Sub-franquicias.
+* Analítica avanzada de Business Intelligence o reportes contables complejos.
+
+## 10. Uso y Protección de Datos Personales
+
+* **Responsabilidad de Datos:** El cliente (**Bryan Mayanga**) es el único responsable legal del tratamiento, consentimiento y uso de los datos personales registrados por los usuarios finales en la plataforma.
+* **Privacidad por Diseño:** El sistema ha sido diseñado para no recolectar direcciones exactas ni geolocalización automática sin validación previa, minimizando los riesgos legales asociados a la privacidad.
+* **Custodia de Credenciales:** Una vez entregadas las llaves de acceso (AWS Cognito y AWS Console), la seguridad y custodia de estas recae exclusivamente en el cliente.
 
 ---
 
-## 8. Próximos Pasos
+## 11. Próximos Pasos
 
 Para iniciar con la **Opción 1**:
 
