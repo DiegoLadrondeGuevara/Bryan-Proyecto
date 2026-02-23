@@ -62,8 +62,7 @@ Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilid
 ### **Alcance Adicional a la Propuesta A:**
 
 1. **Dominio Propio (Marca):** Configuración de URL personalizada (Ej: `www.tumarca.pe`).
-2. **Pasarela de Pagos:** Integración para cobros automáticos (Culqi/Mercado Pago) y activación inmediata de servicios.
-3. **Módulo de Reportes (Estadísticas):**
+2. **Módulo de Reportes (Estadísticas):**
 * Gráficos de nuevos registros y renovaciones mensuales.
 * Métricas de interacción (cantidad de escaneos por zona o perfil).
 * Reportes exportables para gestión contable.
@@ -75,7 +74,7 @@ Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilid
 
 * **Tiempo:** 8 a 12 semanas.
 * **Inversión Preferencial:** **S/ 6,500.00**
-* *Nota: Costos de dominio (.pe S/ 110/año aprox.) y comisiones de pasarela son cubiertos por el cliente.*
+* *Nota: Costos de dominio (.pe S/ 110/año aprox.)*
 
 ---
 
