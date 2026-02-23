@@ -171,23 +171,15 @@ El cobro de los servicios de infraestructura se realiza en **Dólares (USD)**.
 * **Seguridad Financiera:** Como parte de la configuración inicial, activaremos **"Alertas de Presupuesto"**. Esto significa que Amazon te enviará un correo automático si el consumo mensual llegara a superar un monto límite establecido por ti (ejemplo: S/ 50.00), dándote control total sobre el gasto.
 
 ---
+
 ### 6.2 Precios por Extensión (Anual) (Dominio)
 
-| **Extensión**                   | **Tipo**                | **Precio Promedio (Soles / USD)**                   | **Proveedor / Dónde comprar**                                                                                                        |
-| ------------------------------- | ----------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **.pe**                         | Dominio Nacional        | **S/130 – S/200+** (~USD 35-55)                     | 🛒 **Hosting.pe** – registro directo en su web (dominios .pe y otros ccTLD) ([Hosting Perú][1])                                      |
-|                                 |                         |                                                     | 🛒 **AltiplanoHost** – registro rápido de .pe y otras extensiones (USD ~29.90 primer año) ([AltiplanoHost Hosting y Dominios A1][2]) |
-|                                 |                         |                                                     | 🛒 **DonDominio** – registrador internacional (aprox. €34.95/año) ([DonDominio][3])                                                  |
-| **.com.pe**                     | Comercial Perú          | **S/130 – S/200+** (~USD 35-55)                     | 🛒 **Hosting.pe** – registro en su web de .com.pe ([Hosting Perú][1])                                                                |
-|                                 |                         |                                                     | 🛒 **AltiplanoHost** – .com.pe desde USD 29.90 primer año ([AltiplanoHost Hosting y Dominios A1][2])                                 |
-|                                 |                         |                                                     | 🛒 **Namecheap** – .com.pe desde ~$75.98 (precio estándar) ([Namecheap][4])                                                          |
-| **.com**                        | Internacional           | **S/70 – S/90+** (~USD 15-20)                       | 🛒 **Hosting.pe** – .com disponible en su buscador ([Hosting Perú][1])                                                               |
-|                                 |                         |                                                     | 🛒 **Namecheap** / **Hostinger** / **Google Domains** – dominio .com estándar a nivel mundial                                        |
-| **.net / .org**                 | Alternativos            | **S/60 – S/90** (~USD 15-20)                        | 🛒 **Hosting.pe** – .net y .org también se ofrecen ([Hosting Perú][1])                                                               |
-|                                 |                         |                                                     | 🛒 **Namecheap** – .net / .org registro internacional estándar                                                                       |
-| **.net.pe / .org.pe / .nom.pe** | ccTLD Perú alternativos | **USD 5.90 – USD 39.90** (~S/24 – S/150) primer año | 🛒 **AltiplanoHost** – ofertas primer año para extensiones peruana alternativas ([AltiplanoHost Hosting y Dominios A1][2])           |
-|                                 |                         |                                                     | 🛒 **DominiosPeru.pe** – .net.pe o .org.pe desde alrededor de USD 5.90 para proyectos u organizaciones ([dominios Perú][5])          |
+| **Extensión** | **Tipo** | **Precio Promedio (Soles / USD)** | **Proveedor / Dónde comprar** |
+| --- | --- | --- | --- |
+| **.pe** | Dominio Nacional | **S/130 – S/200+** (~USD 35-55) | 🛒 **Hosting.pe** / **AltiplanoHost** – Registro directo de la extensión oficial del Perú. Es la más recomendada para posicionamiento local. |
+| **.com.pe** | Comercial Perú | **S/130 – S/200+** (~USD 35-55) | 🛒 **Hosting.pe** / **AltiplanoHost** – Opción comercial para empresas registradas en Perú. |
 
+**Nota sobre los dominios:** Para el mercado peruano, la extensión **.pe** es la que genera mayor confianza y recordación en los usuarios. El costo de renovación anual suele mantenerse en el mismo rango de precio del registro inicial.
 
 ---
 
