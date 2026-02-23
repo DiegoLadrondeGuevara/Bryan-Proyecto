@@ -10,7 +10,7 @@
 
 ## 1. Visión General del Proyecto
 
-El objetivo es desarrollar una plataforma tecnológica robusta que permita la creación, gestión y visualización de perfiles de emergencia mediante códigos QR únicos. El sistema está diseñado para ser escalable, seguro y de **bajo costo de mantenimiento** utilizando arquitectura de Nube Serverless (AWS).
+El objetivo es desarrollar una plataforma inicial escalable y segura que permita la creación, gestión y visualización de perfiles de emergencia mediante códigos QR únicos. El sistema está diseñado para ser escalable, seguro y de **bajo costo de mantenimiento** utilizando arquitectura de Nube Serverless (AWS).
 
 ---
 
@@ -19,8 +19,8 @@ hacer la calculadora de servisio usados
 
 Para este proyecto, utilizaremos la nube de **Amazon Web Services (AWS)**.
 
-* **Cero Gastos Fijos:** A diferencia de un hosting tradicional (S/ 50-100 mensuales), AWS solo te cobrará por cada vez que alguien use la web. Si no hay tráfico, el costo es **S/ 0.00**. Cambiar
-* **Tu Propiedad:** Tú crearás la cuenta con tu propia tarjeta. Esto garantiza que tú eres el único dueño de la base de datos. Yo solo me encargo de la configuración técnica.
+* **Costos variables según uso:** Costos variables según uso, con un estimado mensual inicial bajo (aprox. S/ 30 – S/ 120)
+* **Tu Propiedad:** Tú crearás la cuenta con tu propia tarjeta. Esto garantiza que tú eres el único dueño de la base de datos. Yo solo me encargo de la configuración técnica. El cliente es responsable del acceso administrativo y custodia de su cuenta AWS.
 * **Ahorro en Notificaciones:** Usaremos **AWS SES** para los correos electrónicos, que permite enviar miles de mensajes de forma gratuita o por fracciones de céntimo.
 
 ---
