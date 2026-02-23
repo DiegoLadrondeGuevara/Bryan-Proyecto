@@ -116,7 +116,33 @@ Para garantizar el correcto funcionamiento del panel en el punto de venta:
 
 ---
 
-## 8. Próximos Pasos
+## **ANEXO TÉCNICO: ESTIMACIÓN DE COSTOS AWS (NUBE)**
+
+El sistema utiliza una arquitectura **Serverless**, lo que permite que los costos operativos sean proporcionales al uso real del negocio. A continuación, se presenta una estimación de gastos mensuales basada en la calculadora oficial de AWS, proyectada en tres niveles de crecimiento:
+
+### **1. Proyección de Gastos Mensuales por Escenario**
+
+| Servicio | Función | Escenario 1 (Inicio) | Escenario 2 (Crecimiento) | Escenario 3 (Escala) |
+| --- | --- | --- | --- | --- |
+|  | **Volumetría estimada** | *1,000 registros / 5,000 escaneos* | *10,000 registros / 50,000 escaneos* | *50,000 registros / 250,000 escaneos* |
+| **AWS Lambda** | Procesamiento y lógica | S/ 0.00* | S/ 0.50 | S/ 4.00 |
+| **DynamoDB** | Base de Datos segura | S/ 1.00 | S/ 5.00 | S/ 15.00 |
+| **API Gateway** | Conexión Tablet <> Nube | S/ 0.40 | S/ 4.00 | S/ 20.00 |
+| **AWS Cognito** | Seguridad y Logins | S/ 0.00* | S/ 0.00* | S/ 10.00 |
+| **AWS SES** | Envío de Alertas (Email) | S/ 0.50 | S/ 4.00 | S/ 18.00 |
+| **S3 / CloudFront** | Almacenamiento y Velocidad | S/ 1.10 | S/ 9.00 | S/ 35.00 |
+| **Monitoreo** | Logs y seguridad activa | S/ 2.00 | S/ 10.00 | S/ 25.00 |
+| **TOTAL ESTIMADO** |  | **S/ 5.00 – S/ 10.00** | **S/ 35.00 – S/ 50.00** | **S/ 130.00 – S/ 180.00** |
+
+### **2. Notas Importantes sobre el Pago de Nube**
+
+* **Eficiencia Operativa:** El costo de infraestructura solo aumenta si el negocio crece y genera más registros. Si un mes no hay actividad, el costo se reduce al mínimo técnico (cercano a S/ 0.00).
+* **Transparencia:** El pago se realiza directamente de la tarjeta del cliente a Amazon Web Services. No existen intermediarios en este cobro.
+* **Seguridad Financiera:** Como parte de la configuración inicial, activaremos **"Alertas de Presupuesto"**. Esto significa que Amazon te enviará un correo automático si el consumo mensual llegara a superar un monto límite establecido por ti (ejemplo: S/ 50.00), dándote control total sobre el gasto.
+
+---
+
+## 9. Próximos Pasos
 
 Para iniciar con la **Opción 1**:
 
