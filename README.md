@@ -1,8 +1,8 @@
 # PROPUESTA DE DESARROLLO: SISTEMA DE GESTIÓN DE IDENTIDAD QR
 
-**Preparado para:** [Nombre del Cliente]
+**Preparado para:** Brayan Mayanga
 
-**Elaborado por:** [Tu Nombre]
+**Elaborado por:** Carla Aguirre
 
 **Fecha:** 22 de febrero de 2026
 
