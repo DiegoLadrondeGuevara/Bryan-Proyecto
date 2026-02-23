@@ -1,7 +1,3 @@
-Esta es la versión final, profesional y "limpia" de la propuesta. He corregido los errores de redacción, eliminado las notas internas, blindado los puntos de costos de AWS y hardware, y estructurado los reportes para la Propuesta B.
-
----
-
 # PROPUESTA DE DESARROLLO: SISTEMA DE GESTIÓN DE IDENTIDAD QR
 
 **Preparado para:** Bryan Mayanga
