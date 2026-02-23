@@ -35,7 +35,7 @@ Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilid
 3. **Fabricación:** Descarga del QR en formato de imagen para impresión manual.
 4. **Visualización:** Al escanear el QR, se mostrará una **Cartilla Informativa** con: nombre, edad, sexo, características físicas, correo del representante y botón de contacto directo a WhatsApp.
 5. **Dominio Propio (Marca):** Configuración de URL personalizada (Ej: `www.tumarca.pe`).
-6. **Alertas de Vencimiento:** Notificación automática diaria al administrador sobre suscripciones próximas a expirar.
+6. **Alertas de Vencimiento:** Notificación automática diaria al administrador y al usuario que compra el servicio sobre suscripciones próximas a expirar.
 
 ### **Panel Administrativo (Backoffice):**
 
@@ -134,7 +134,7 @@ El sistema utiliza una arquitectura **Serverless**, lo que permite que los costo
 
 #### **Notas Importantes sobre el Pago de Nube**
 
-* **Eficiencia Operativa:** El costo de infraestructura solo aumenta si el negocio crece y genera más registros. Si un mes no hay actividad, el costo se reduce al mínimo técnico (cercano a S/ 0.00).
+* **Eficiencia Operativa:** El costo de infraestructura solo aumenta si el negocio crece y genera más registros. Si un mes no hay actividad, el costo se reduce proporcionalmente.
 * **Transparencia:** El pago se realiza directamente de la tarjeta del cliente a Amazon Web Services. No existen intermediarios en este cobro.
 * **Seguridad Financiera:** Como parte de la configuración inicial, activaremos **"Alertas de Presupuesto"**. Esto significa que Amazon te enviará un correo automático si el consumo mensual llegara a superar un monto límite establecido por ti (ejemplo: S/ 50.00), dándote control total sobre el gasto.
 
