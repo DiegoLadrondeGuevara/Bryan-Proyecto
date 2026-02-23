@@ -1,3 +1,7 @@
+Esta es la versión final, profesional y "limpia" de la propuesta. He corregido los errores de redacción, eliminado las notas internas, blindado los puntos de costos de AWS y hardware, y estructurado los reportes para la Propuesta B.
+
+---
+
 # PROPUESTA DE DESARROLLO: SISTEMA DE GESTIÓN DE IDENTIDAD QR
 
 **Preparado para:** Bryan Mayanga
@@ -10,99 +14,112 @@
 
 ## 1. Visión General del Proyecto
 
-El objetivo es desarrollar una plataforma tecnológica robusta que permita la creación, gestión y visualización de perfiles de emergencia mediante códigos QR únicos. El sistema está diseñado para ser escalable, seguro y de **bajo costo de mantenimiento** utilizando arquitectura de Nube Serverless (AWS).
+El objetivo es desarrollar una plataforma tecnológica robusta que permita la creación, gestión y visualización de perfiles de emergencia mediante códigos QR únicos. El sistema utiliza una arquitectura de **Nube Serverless (AWS)** para garantizar que sea escalable, seguro y de bajo costo operativo.
 
 ---
 
-## 2. Infraestructura: AWS Serverless y Costos Operativos
+## 2. Infraestructura Cloud y Costos
 
-# hacer la calculadora de servisio usados
+Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilidad y seguridad de nivel bancario.
 
-Para este proyecto, utilizaremos la nube de **Amazon Web Services (AWS)**.
-
-* **Bajos Gastos Fijos:** A diferencia de un hosting tradicional (S/ 50-100 mensuales), AWS solo te cobrará por cada vez que alguien use la web. Si no hay tráfico, el costo es bajo, cercano al 0.
-* **Tu Propiedad:** Tú crearás la cuenta con tu propia tarjeta. Esto garantiza que tú eres el único dueño de la base de datos. Yo solo me encargo de la configuración técnica.
-# Verificar con la calculadora costos del ses
-* **Ahorro en Notificaciones:** Usaremos **AWS SES** para los correos electrónicos, que permite enviar miles de mensajes de forma gratuita o por fracciones de céntimo.
+* **Costos Variables:** El sistema se basa en el consumo real. Se estima un costo mensual inicial bajo (aprox. **S/ 30.00 – S/ 80.00**), sujeto al tráfico y volumen de datos. Si no hay uso, el costo tiende a cero.
+* **Propiedad y Control:** El cliente realizará la apertura de su cuenta AWS y el registro de su método de pago. El cliente es el titular único de los datos y responsable del acceso administrativo y custodia de sus credenciales.
+* **Notificaciones:** Se integrará **AWS SES** para el envío de alertas automáticas por correo electrónico con costos mínimos por volumen.
 
 ---
 
 ## 3. PROPUESTA A: "MVP OPERATIVO + PANEL ADMIN"
 
-*Ideal para lanzar el negocio en 1 mes con control total y ventas presenciales.*
+*Ideal para lanzar el negocio en el corto plazo con control total y ventas presenciales.*
 
 ### **¿Cómo funcionará el sistema?**
 
-1. **Captación:** En una tablet o PC, registras los datos del usuario (niño, mascota, etc.).
-2. **Generación:** El sistema crea un código QR único vinculado a esa información.
-3. **Fabricación:** El panel te permite descargar el QR para imprimirlo manualmente.
-4. **Uso:** Al escanear el QR, se ve la info de emergencia y un botón de contacto WhatsApp.
-5. **Alertas de Vencimiento:** El sistema revisará diariamente las fechas y **te enviará un correo automático** avisándote qué clientes están por vencer para que puedas contactarlos y renovarles manualmente.
+1. **Captación:** Registro de datos del usuario (niño, mascota, etc.) desde una tablet o PC.
+2. **Generación:** Creación de un código QR único vinculado a la información.
+3. **Fabricación:** Descarga del QR en formato de imagen para impresión manual.
+4. **Visualización:** Al escanear el QR, se mostrará una **Cartilla Informativa** con: nombre, edad, sexo, características físicas, correo del representante y botón de contacto directo a WhatsApp.
+5. **Alertas de Vencimiento:** Notificación automática diaria al administrador sobre suscripciones próximas a expirar.
 
-### **¿Qué obtendrás al final?**
-- **Web app usuario para observar mos dstos de la persona cuando escaneas el qr**
-* **Panel Administrativo: especificar que hace, poner para roles diferentes** Tu centro de control para buscar usuarios por DNI y generar QRs.
-* **Sistema de Alertas:** Notificaciones a tu correo sobre suscripciones por expirar.
-se necesita intenet en las tablets para funcioanr con la web (parametrico en el panel tsmbien)
-### **Inversión y Tiempo:**
+### **Panel Administrativo (Backoffice):**
 
-* **Tiempo:** 4 semanas (Dedicación 8h diarias).
-* **Inversión Especial (Familiar): S/ 5,000.00** *(Valor real mercado: S/ 8,500.00)*
+* **Gestión de Roles:**
+* **Super-Admin:** Acceso total, gestión de administradores y métricas sensibles.
+* **Operador:** Registro de usuarios, activación de QRs y descargas para impresión.
 
----
 
-## 4. PROPUESTA B: "SAAS PRO + AUTOMATIZACIÓN TOTAL"
-
-*Solución avanzada para automatizar cobros, fabricación e identidad de marca propia.*
-
-### **¿Cómo funcionará el sistema?**
-
-1. **Dominio Propio (Marca):** Tu página tendrá su nombre oficial (Ej: `www.tumarca.pe`), lo cual permite que tu marca aparezca en la URL de cada QR.
-
-Reportes de usuarios (estsfisticas)
-### **¿Qué obtendrás al final?**
-
-* **Todo lo de la Propuesta A.**
-* **Dominio Especial Registrado:** Configuración de la marca en la URL (.pe / .com).
+* **Gestión de Usuarios:** Buscador inteligente (DNI, Nombre, QR) y botón de **Desactivación Instantánea (Kill-Switch)** para anular QRs por falta de pago o pérdida.
+* **Centro de Generación:** Formulario individual, previsualización del QR y cola de gestión para control de impresión manual.
+* **Control de Suscripciones:** Semáforo de estados (Verde: Activo / Ámbar: Próximo a vencer / Rojo: Vencido/Bloqueado).
+* **Seguridad:** Log de auditoría (quién hizo qué), historial de renovaciones e integración con **AWS Cognito** (opción de 2FA).
 
 ### **Inversión y Tiempo:**
 
-* **Tiempo:** 8 a 10 semanas.
-* **Inversión Especial (Familiar): S/ 8,000.00** *(Valor real mercado: S/ 18,000.00)*
-* *Nota: El costo del nombre del dominio (aprox. S/ 110 anual) es cubierto por el cliente.*
+* **Tiempo:** 4 a 6 semanas (Dedicación 8h diarias).
+* **Inversión Preferencial:** **S/ 5,500.00**
 
 ---
 
-## 5. Comparativa Técnica de Capacidades
+## 4. PROPUESTA B: "SAAS PRO"
 
-| Función | Opción 1 (MVP) | Opción 2 (SaaS Pro) |
+*Solución avanzada para escala de marca, pagos automáticos e inteligencia de negocio.*
+
+### **Alcance Adicional a la Propuesta A:**
+
+1. **Dominio Propio (Marca):** Configuración de URL personalizada (Ej: `www.tumarca.pe`).
+2. **Pasarela de Pagos:** Integración para cobros automáticos (Culqi/Mercado Pago) y activación inmediata de servicios.
+3. **Módulo de Reportes (Estadísticas):**
+* Gráficos de nuevos registros y renovaciones mensuales.
+* Métricas de interacción (cantidad de escaneos por zona o perfil).
+* Reportes exportables para gestión contable.
+
+
+4. **Automatización de Notificaciones:** Correos automáticos de recordatorio dirigidos **tanto al administrador como al cliente final**.
+
+### **Inversión y Tiempo:**
+
+* **Tiempo:** 8 a 12 semanas.
+* **Inversión Preferencial:** **S/ 6,500.00**
+* *Nota: Costos de dominio (.pe S/ 110/año aprox.) y comisiones de pasarela son cubiertos por el cliente.*
+
+---
+
+## 5. Requisitos de Hardware (Tablets)
+
+Para garantizar el correcto funcionamiento del panel en el punto de venta:
+
+* **Conectividad (Obligatoria):** Internet estable (Wi-Fi o 4G/5G). El sistema depende de la nube.
+* **Pantalla Recomendada:** 10.1 pulgadas o superior.
+* **Memoria RAM:** 4 GB o superior.
+* **Sistema Operativo:** Android 11+ o iPadOS 15+.
+* **Navegador:** Google Chrome actualizado.
+
+---
+
+## 6. Comparativa Técnica
+
+| Función | Propuesta A (MVP) | Propuesta B (SaaS Pro) |
 | --- | --- | --- |
-| **Arquitectura** | AWS Serverless (Pago por uso) | AWS Serverless (Pago por uso) |
-| **Dominio Personalizado** | URL Genérica | **URL con tu Marca (propio)** |
-| **Pagos** | Manual (Efectivo/Yape externo) | A|
-| **Impresión** | Manual (Descarga de archivo) | Automática (Conexión IoT) |
-| **Alertas Vencimiento** | **Email solo al administrador** | **Email a admin y al cliente** |
-| **Mantenimiento** | (Segun uso AWS) | (Según metricas de uso AWS)|
+| **Arquitectura** | AWS Serverless | AWS Serverless |
+| **Dominio** | URL Genérica | **Propio (Tu Marca)** |
+| **Pagos** | Registro Manual | **Automatizados (Online)** |
+| **Alertas Vencimiento** | Solo al Administrador | **Admin y Cliente Final** |
+| **Estadísticas** | Básicas | **Avanzadas y Exportables** |
 
 ---
 
-## 6. ¿Qué esperar del desarrollo?
+## 7. Cronograma de Trabajo
 
-Trabajaré bajo una metodología de **entregas semanales**:
-
-* **Semana 1:** Configuración de AWS, Seguridad (Login) y Base de Datos.
-* **Semana 2:** Formulario de registro y Panel de Usuario.
-* **Semana 3:** Panel de Administrador, Generador de QR y Sistema de correos SES.
-* **Semana 4:** Pruebas finales, ajustes de diseño y entrega de accesos.
-
-**Nota:** Todo el código será supervisado por un desarrollador Senior para garantizar que la plataforma sea profesional y no presente fallos.
+* **Semana 1:** Configuración de AWS, Seguridad y Base de Datos.
+* **Semana 2:** Formulario de registro y Visualización de Cartilla.
+* **Semana 3:** Panel Administrativo y Generador de QR.
+* **Semana 4:** Sistema de Alertas, pruebas finales y despliegue.
 
 ---
 
-## 7. Próximos Pasos
+## 8. Próximos Pasos
 
 Para iniciar con la **Opción 1**:
 
-1. **Aceptación:** Confirmar la propuesta por este medio.
-2. **Configuración:** Sesión de 30 min para crear tu cuenta AWS con tu tarjeta.
-3. **Inicio:** Abono del **50% de adelanto (S/ 2,500.00)** para comenzar el desarrollo mañana mismo.
+1. **Aceptación:** Creación y firma de los contratos.
+2. **Configuración:** Sesión de 30 min - 1 hora para apertura de cuenta AWS.
+3. **Inicio:** Abono del **50% de adelanto (S/ 2,750.00) o (S/ 3,250.00)** para comenzar el desarrollo.
