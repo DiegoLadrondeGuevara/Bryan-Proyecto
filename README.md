@@ -37,17 +37,45 @@ Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilid
 5. **Dominio Propio (Marca):** Configuración de URL personalizada (Ej: `www.tumarca.pe`).
 6. **Alertas de Vencimiento:** Notificación automática diaria al administrador y al usuario que compra el servicio sobre suscripciones próximas a expirar.
 
-### **Panel Administrativo (Backoffice):**
+### **Definición Detallada del Panel Administrativo (Backoffice):**
 
-* **Gestión de Roles:**
-* **Super-Admin:** Acceso total, gestión de administradores y métricas sensibles.
-* **Operador:** Registro de usuarios, activación de QRs y descargas para impresión.
+El acceso al sistema está blindado por **AWS Cognito**, asegurando que cada usuario acceda solo a las funciones permitidas según su nivel:
 
+#### **A. Módulo Super-Admin (Control Total)**
 
-* **Gestión de Usuarios:** Buscador inteligente (DNI, Nombre, QR) y botón de **Desactivación Instantánea (Kill-Switch)** para anular QRs por falta de pago o pérdida.
-* **Centro de Generación:** Formulario individual, previsualización del QR y cola de gestión para control de impresión manual.
-* **Control de Suscripciones:** Semáforo de estados (Verde: Activo / Ámbar: Próximo a vencer / Rojo: Vencido/Bloqueado).
-* **Seguridad:** Log de auditoría (quién hizo qué), historial de renovaciones e integración con **AWS Cognito** (opción de 2FA).
+* **Gestión de Staff:** Panel para crear, suspender o eliminar cuentas de **Reclutadores**.
+* Contador de perfiles: Activos, Vencidos y **Pendientes de Entrega**.
+* Reporte de usuarios próximos a vencer (ventana de 7 días).
+* **Kill-Switch Administrativo:** Bloqueo inmediato de la cartilla pública sin borrado de data (permite reactivación rápida tras pago).
+* **Auditoría de Operaciones:** Registro histórico: *"El Reclutador X activó la suscripción del usuario Y el día Z"*.
+* **Gestión de Logs:** Visualización de estadísticas de interacción (conteo de escaneos y horas de actividad).
+
+#### **B. Módulo Reclutador (Ventas y Registro)**
+
+* **Formulario de Registro y Pre-activación:** Registro de datos del usuario. Al guardar, el perfil se crea automáticamente en estado **"Pendiente de Entrega"**.
+* *Nota: En este estado, la suscripción NO corre y el tiempo de servicio no se consume.*
+* **Activación Manual de Suscripción:** Una vez que el cliente recibe su pulsera física con el QR, el Reclutador (o el Admin) presiona el botón **"Activar Servicio"**.
+* **Acción:** El sistema registra la fecha actual como "Fecha de Inicio" y calcula automáticamente la fecha de vencimiento.
+* **Buscador y Verificación:** Filtro por Nombre o ID para confirmar que la información en la cartilla es correcta antes de la entrega final.
+* **Gestor de Salida (QR):** Generación y descarga de la imagen del código para su fabricación física.
+
+#### **C. Interfaz de Cartilla (Vista del Usuario Final)**
+
+Es la página optimizada para móviles que aparece al escanear el QR:
+
+* **Estados de Visualización:**
+1. **Estado Pendiente:** Si se escanea antes de la activación, mostrará: *"Tu servicio está en proceso de entrega. Pronto estará activo"*.
+2. **Estado Activo:** Muestra el Layout limpio con nombre o alias, características relevantes y botón de contacto directo a WhatsApp.
+3. **Estado Vencido/Bloqueado:** Muestra: *"Perfil no disponible actualmente. Contacte a soporte"*.
+* **Footer de Soporte:** Enlace directo de "Soporte" que redirige al contacto oficial de administración (Bryan).
+
+---
+
+### **Implementación Técnica de Logs y Suscripción**
+
+1. **Registro de Escaneos (Logs):** Se implementará un microservicio en **AWS Lambda + DynamoDB** que guardará el `ID_QR`, `Fecha/Hora` y `Tipo de dispositivo`. Esto permite al Admin ver en qué momentos hay más actividad.
+2. **Lógica de Suscripción:** El campo `fecha_inicio` en la base de datos permanecerá nulo (`NULL`) hasta que se presione el botón de activación. Esto garantiza una facturación justa para el cliente y evita que el soporte técnico tenga que corregir fechas de vencimiento manualmente por retrasos en la entrega física.
+
 
 ### **Inversión y Tiempo:**
 
@@ -120,17 +148,21 @@ El sistema utiliza una arquitectura **Serverless**, lo que permite que los costo
 
 ### **1. Proyección de Gastos Mensuales por Escenario**
 
+El cobro de los servicios de infraestructura se realiza en **Dólares (USD)**.
+
 | Servicio | Función | Escenario 1 (Inicio) | Escenario 2 (Crecimiento) | Escenario 3 (Escala) |
 | --- | --- | --- | --- | --- |
-|  | **Volumetría estimada** | *1,000 registros / 5,000 escaneos* | *10,000 registros / 50,000 escaneos* | *50,000 registros / 250,000 escaneos* |
-| **AWS Lambda** | Procesamiento y lógica | S/ 0.00* | S/ 0.50 | S/ 4.00 |
-| **DynamoDB** | Base de Datos segura | S/ 1.00 | S/ 5.00 | S/ 15.00 |
-| **API Gateway** | Conexión Tablet <> Nube | S/ 0.40 | S/ 4.00 | S/ 20.00 |
-| **AWS Cognito** | Seguridad y Logins | S/ 0.00* | S/ 0.00* | S/ 10.00 |
-| **AWS SES** | Envío de Alertas (Email) | S/ 0.50 | S/ 4.00 | S/ 18.00 |
-| **S3 / CloudFront** | Almacenamiento y Velocidad | S/ 1.10 | S/ 9.00 | S/ 35.00 |
-| **Monitoreo** | Logs y seguridad activa | S/ 2.00 | S/ 10.00 | S/ 25.00 |
-| **TOTAL ESTIMADO** |  | **S/ 5.00 – S/ 10.00** | **S/ 35.00 – S/ 50.00** | **S/ 130.00 – S/ 180.00** |
+| **Volumetría** |  | *1,000 reg / 5,000 esc* | *10,000 reg / 50,000 esc* | *50,000 reg / 250,000 esc* |
+| **AWS Lambda** | Procesamiento | $0.00 USD* | $0.15 USD | $1.10 USD |
+| **DynamoDB** | Base de Datos | $0.27 USD | $1.40 USD | $4.10 USD |
+| **API Gateway** | Conexión | $0.11 USD | $1.10 USD | $5.50 USD |
+| **AWS Cognito** | Seguridad | $0.00 USD* | $0.00 USD* | $2.80 USD |
+| **AWS SES** | Alertas Email | $0.14 USD | $1.10 USD | $5.00 USD |
+| **S3 / CloudFront** | Almacenamiento | $0.30 USD | $2.50 USD | $9.60 USD |
+| **Monitoreo** | Logs/Seguridad | $0.55 USD | $2.75 USD | $6.90 USD |
+| **TOTAL USD** |  | **$1.37 – $2.75 USD** | **$9.00 – $14.00 USD** | **$35.00 – $49.00 USD** |
+
+> **IMPORTANTE:** Para seguridad financiera, activaremos una **"Alerta de Presupuesto"** a los **$15.00 USD**. Amazon enviará un correo automático si el consumo proyectado supera este monto.
 
 #### **Notas Importantes sobre el Pago de Nube**
 
@@ -141,19 +173,21 @@ El sistema utiliza una arquitectura **Serverless**, lo que permite que los costo
 ---
 ### 2. Precios por Extensión (Anual) (Dominio)
 
-| Extensión | Tipo | Precio Promedio (Soles) | Nota |
-| --- | --- | --- | --- |
-| **.pe** | Dominio Nacional | **S/ 110 – S/ 130** | Es el más prestigioso para el mercado local. |
-| **.com.pe** | Comercial Perú | **S/ 80 – S/ 110** | Muy usado por empresas peruanas. |
-| **.com** | Internacional | **S/ 50 – S/ 80** | El estándar global; suele ser el más económico. |
-| **.net / .org** | Alternativos | **S/ 60 – S/ 90** | Para tecnología u organizaciones. |
-| **.org.pe** | Org. Peruana | **S/ 20 – S/ 40** | Precio especial para ONGs. |
+| **Extensión**                   | **Tipo**                | **Precio Promedio (Soles / USD)**                   | **Proveedor / Dónde comprar**                                                                                                        |
+| ------------------------------- | ----------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **.pe**                         | Dominio Nacional        | **S/130 – S/200+** (~USD 35-55)                     | 🛒 **Hosting.pe** – registro directo en su web (dominios .pe y otros ccTLD) ([Hosting Perú][1])                                      |
+|                                 |                         |                                                     | 🛒 **AltiplanoHost** – registro rápido de .pe y otras extensiones (USD ~29.90 primer año) ([AltiplanoHost Hosting y Dominios A1][2]) |
+|                                 |                         |                                                     | 🛒 **DonDominio** – registrador internacional (aprox. €34.95/año) ([DonDominio][3])                                                  |
+| **.com.pe**                     | Comercial Perú          | **S/130 – S/200+** (~USD 35-55)                     | 🛒 **Hosting.pe** – registro en su web de .com.pe ([Hosting Perú][1])                                                                |
+|                                 |                         |                                                     | 🛒 **AltiplanoHost** – .com.pe desde USD 29.90 primer año ([AltiplanoHost Hosting y Dominios A1][2])                                 |
+|                                 |                         |                                                     | 🛒 **Namecheap** – .com.pe desde ~$75.98 (precio estándar) ([Namecheap][4])                                                          |
+| **.com**                        | Internacional           | **S/70 – S/90+** (~USD 15-20)                       | 🛒 **Hosting.pe** – .com disponible en su buscador ([Hosting Perú][1])                                                               |
+|                                 |                         |                                                     | 🛒 **Namecheap** / **Hostinger** / **Google Domains** – dominio .com estándar a nivel mundial                                        |
+| **.net / .org**                 | Alternativos            | **S/60 – S/90** (~USD 15-20)                        | 🛒 **Hosting.pe** – .net y .org también se ofrecen ([Hosting Perú][1])                                                               |
+|                                 |                         |                                                     | 🛒 **Namecheap** – .net / .org registro internacional estándar                                                                       |
+| **.net.pe / .org.pe / .nom.pe** | ccTLD Perú alternativos | **USD 5.90 – USD 39.90** (~S/24 – S/150) primer año | 🛒 **AltiplanoHost** – ofertas primer año para extensiones peruana alternativas ([AltiplanoHost Hosting y Dominios A1][2])           |
+|                                 |                         |                                                     | 🛒 **DominiosPeru.pe** – .net.pe o .org.pe desde alrededor de USD 5.90 para proyectos u organizaciones ([dominios Perú][5])          |
 
-### 2. Consideraciones Importantes
-
-* **IGV:** Ten en cuenta que la mayoría de proveedores locales no incluyen el **18% de IGV** en sus precios de lista.
-* **Ofertas de "Primer Año":** Muchos registradores ofrecen el primer año a un precio muy bajo (ej. **S/ 1.00** o **S/ 15.00**), pero la renovación al segundo año sube al precio regular. **Fíjate siempre en el costo de renovación.**
-* **Punto.pe:** Es el administrador oficial de los dominios `.pe` en el país. Si compras directamente ahí, el precio es estándar (**S/ 110.00**), mientras que los revendedores pueden cobrar una comisión por gestión o darte descuentos si contratas hosting con ellos.
 
 ---
 
@@ -191,13 +225,14 @@ Para evitar el *scope creep* y cumplir con el cronograma, se declara que el pres
 * Geolocalización automática en tiempo real del escaneo.
 * Módulo Multi-empresa o Sub-franquicias.
 * Analítica avanzada de Business Intelligence o reportes contables complejos.
+* * **Cierre de Caja:** El sistema NO realiza cuadre de caja ni gestión de efectivo. El cliente debe llevar su control contable manualmente de forma externa.
 
 ## 10. Uso y Protección de Datos Personales
 
 * **Responsabilidad de Datos:** El cliente (**Bryan Mayanga**) es el único responsable legal del tratamiento, consentimiento y uso de los datos personales registrados por los usuarios finales en la plataforma.
 * **Privacidad por Diseño:** El sistema ha sido diseñado para no recolectar direcciones exactas ni geolocalización automática sin validación previa, minimizando los riesgos legales asociados a la privacidad.
 * **Custodia de Credenciales:** Una vez entregadas las llaves de acceso (AWS Cognito y AWS Console), la seguridad y custodia de estas recae exclusivamente en el cliente.
-
+* **Kill-Switch (No eliminación):** Por comodidad comercial, el sistema NO eliminará automáticamente los datos al vencer la suscripción para permitir reactivaciones. Solo el Super-Admin tendrá la facultad de eliminación definitiva mediante una función especial.
 ---
 
 ## 11. Próximos Pasos
