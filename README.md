@@ -33,9 +33,9 @@ Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilid
 1. **Captación:** Registro de datos del usuario (niño, mascota, etc.) desde una tablet o PC.
 2. **Generación:** Creación de un código QR único vinculado a la información.
 3. **Fabricación:** Descarga del QR en formato de imagen para impresión manual.
-4. **Visualización:** Al escanear el QR, se mostrará una **Cartilla Informativa** con: nombre o alias, características relevantes y botón de contacto directo a WhatsApp.
+4. **Visualización:** Al escanear el QR, se mostrará una **Cartilla Informativa** con: nombre o alias, características relevantes y botón de contacto directo a WhatsApp (No se mostrará información sensible (dirección, geolocalización, DNI, etc.).
 5. **Dominio Propio (Marca):** Configuración de URL personalizada (Ej: `www.tumarca.pe`).
-6. **Alertas de Vencimiento:** Notificación automática diaria al administrador y al usuario que compra el servicio sobre suscripciones próximas a expirar.
+6. **Alertas de Vencimiento:** Notificación automática diaria al administrador y al usuario 3 hitos (7 días antes, 3 días antes, día de vencimiento), además de un correo de reafirmación del inico de suscripción.
 
 ### **Definición Detallada del Panel Administrativo (Backoffice):**
 
@@ -65,7 +65,7 @@ Es la página optimizada para móviles que aparece al escanear el QR:
 
 * **Estados de Visualización:**
 1. **Estado Pendiente:** Si se escanea antes de la activación, mostrará: *"Tu servicio está en proceso de entrega. Pronto estará activo"*.
-2. **Estado Activo:** Muestra el Layout limpio con nombre o alias, características relevantes y botón de contacto directo a WhatsApp.
+2. **Estado Activo:** Muestra el Layout limpio con nombre o alias, características relevantes y botón de contacto directo a WhatsApp (No se mostrará información sensible (dirección, geolocalización, DNI, etc.).
 3. **Estado Vencido/Bloqueado:** Muestra: *"Perfil no disponible actualmente. Contacte a soporte"*.
 * **Footer de Soporte:** Enlace directo de "Soporte" que redirige al contacto oficial de administración (Bryan).
 
@@ -73,7 +73,7 @@ Es la página optimizada para móviles que aparece al escanear el QR:
 
 ### **Implementación Técnica de Logs y Suscripción**
 
-1. **Registro de Escaneos (Logs):** Se implementará un microservicio en **AWS Lambda + DynamoDB** que guardará el `ID_QR`, `Fecha/Hora` y `Tipo de dispositivo`. Esto permite al Admin ver en qué momentos hay más actividad.
+1. **Registro de Escaneos (Logs):** Se implementará un microservicio en **AWS Lambda + DynamoDB** que guardará el `ID_QR`, `Fecha/Hora` y `Tipo de dispositivo`. Esto permite al Admin ver en qué momentos hay más actividad (No se almacena ubicación GPS ni IP del escaneo).
 2. **Lógica de Suscripción:** El campo `fecha_inicio` en la base de datos permanecerá nulo (`NULL`) hasta que se presione el botón de activación. Esto garantiza una facturación justa para el cliente y evita que el soporte técnico tenga que corregir fechas de vencimiento manualmente por retrasos en la entrega física.
 
 
@@ -84,7 +84,7 @@ Es la página optimizada para móviles que aparece al escanear el QR:
 
 ---
 
-## 5. Requisitos de Hardware (Tablets)
+## 4. Requisitos de Hardware (Tablets)
 
 Para garantizar el correcto funcionamiento del panel en el punto de venta:
 
@@ -96,7 +96,7 @@ Para garantizar el correcto funcionamiento del panel en el punto de venta:
 
 ---
 
-## 6. Cronograma de Trabajo
+## 5. Cronograma de Trabajo
 
 **Semana 1: Cimientos y Configuración Cloud**
 
@@ -117,7 +117,7 @@ Para garantizar el correcto funcionamiento del panel en el punto de venta:
 * Desarrollo del panel de gestión (Backoffice) para administradores.
 * Creación del formulario de captación y registro de usuarios (niños, mascotas, etc.).
 * Implementación del **Buscador Inteligente** por ID. o nombre.
-* Configuración de roles: Super-Admin y Operador.
+* Configuración de roles: Super-Admin y Reclutador.
 
 **Semana 4: Generación de QR y Dominio**
 
@@ -142,11 +142,11 @@ Para garantizar el correcto funcionamiento del panel en el punto de venta:
 
 ---
 
-## **ANEXO TÉCNICO: ESTIMACIÓN DE COSTOS AWS (NUBE)**
+## **6. ANEXO TÉCNICO: ESTIMACIÓN DE COSTOS AWS (NUBE)**
 
 El sistema utiliza una arquitectura **Serverless**, lo que permite que los costos operativos sean proporcionales al uso real del negocio. A continuación, se presenta una estimación de gastos mensuales basada en la calculadora oficial de AWS, proyectada en tres niveles de crecimiento:
 
-### **1. Proyección de Gastos Mensuales por Escenario**
+### **6.1 Proyección de Gastos Mensuales por Escenario**
 
 El cobro de los servicios de infraestructura se realiza en **Dólares (USD)**.
 
@@ -171,7 +171,7 @@ El cobro de los servicios de infraestructura se realiza en **Dólares (USD)**.
 * **Seguridad Financiera:** Como parte de la configuración inicial, activaremos **"Alertas de Presupuesto"**. Esto significa que Amazon te enviará un correo automático si el consumo mensual llegara a superar un monto límite establecido por ti (ejemplo: S/ 50.00), dándote control total sobre el gasto.
 
 ---
-### 2. Precios por Extensión (Anual) (Dominio)
+### 6.2 Precios por Extensión (Anual) (Dominio)
 
 | **Extensión**                   | **Tipo**                | **Precio Promedio (Soles / USD)**                   | **Proveedor / Dónde comprar**                                                                                                        |
 | ------------------------------- | ----------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -211,7 +211,7 @@ Finalizado el periodo de garantía de 15 días, el cliente podrá asegurar la co
 
 * **Plan de Mantenimiento Evolutivo (Opcional):**
 * **Servicios:** Monitoreo de salud del sistema en AWS, mantenimiento preventivo de bases de datos, ajustes menores de interfaz y soporte técnico ante incidencias.
-* **Inversión Mensual:** **S/ 350.00** (Costo referencial sujeto a volumen de tickets).
+* **Inversión Mensual:** **S/ 350.00** (Costo referencial sujeto a volumen de tickets [Incluye hasta 4 horas mensuales / 8 tickets]).
 
 * **Soporte On-Demand:** De no contratar el plan mensual, cualquier requerimiento posterior a los 15 días de garantía se facturará como **"Hora Técnica"** con una tarifa de **S/ 80.00 por hora**.
 
