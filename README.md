@@ -16,7 +16,7 @@ El objetivo es desarrollar una plataforma tecnológica robusta que permita la cr
 
 ## 2. Infraestructura Cloud y Costos
 
-Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilidad y seguridad de nivel bancario.
+Se utilizará la nube de **Amazon Web Services (AWS)** para garantizar estabilidad y estándares de seguridad empresarial
 
 * **Costos Variables:** El sistema se basa en el consumo real. Se estima un costo mensual inicial bajo (aprox. **S/ 30.00 – S/ 80.00**), sujeto al tráfico y volumen de datos. Si no hay uso, el costo tiende a cero.
 * **Propiedad y Control:** El cliente realizará la apertura de su cuenta AWS y el registro de su método de pago. El cliente es el titular único de los datos y responsable del acceso administrativo y custodia de sus credenciales.
